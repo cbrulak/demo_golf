@@ -1,0 +1,33 @@
+<%= form_for(@tee_time) do |f| %>
+  <% if @tee_time.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tee_time.errors.count, "error") %> prohibited this tee_time from being saved:</h2>
+
+      <ul>
+      <% @tee_time.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :start %><br>
+    <%= f.datetime_select :start %>
+  </div>
+  <div class="field">
+    <%= f.label :end %><br>
+    <%= f.datetime_select :end %>
+  </div>
+  <div class="field">
+    <%= f.label :length %><br>
+    <%= f.number_field :length %>
+  </div>
+  <div class="field">
+    <%= f.label :Booking_id %><br>
+    <%= f.text_field :Booking_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

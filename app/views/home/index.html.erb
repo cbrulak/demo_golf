@@ -1,0 +1,11 @@
+<h1>welcome to tee time management</h1>
+
+<h2>Users</h2>
+
+<%= render partial: "users/user_list", locals: {users: @users}%>
+
+<%= link_to("Add User", new_user_path)%>
+
+<h2>Clubs</h1>
+<%= render partial: "clubs/club_list", locals: {clubs: @clubs}%>
+<%= link_to("Add Club", new_club_path)%>

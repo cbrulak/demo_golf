@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Start:</strong>
+  <%= @tee_time.start %>
+</p>
+
+<p>
+  <strong>End:</strong>
+  <%= @tee_time.end %>
+</p>
+
+<p>
+  <strong>Length:</strong>
+  <%= @tee_time.length %>
+</p>
+
+
+<%= link_to 'Edit', edit_tee_time_path(@tee_time) %> |
+<%= link_to 'Back', club_path(@tee_time.club_id) %>

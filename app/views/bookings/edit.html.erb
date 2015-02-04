@@ -1,0 +1,8 @@
+<h1>Editing booking</h1>
+
+<%= render 'form' %>
+
+<%= puts @booking.inspect %>
+
+<%= link_to 'Show', @booking %> |
+<%= link_to 'Back', tee_time_path(@booking.tee_time_id) %>

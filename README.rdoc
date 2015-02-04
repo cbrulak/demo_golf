@@ -1,0 +1,9 @@
+== README
+
+Hi! 
+
+This rails app requires ruby 2.1.x. 
+
+You will also need to run bundle install to get all the gems installed. 
+
+

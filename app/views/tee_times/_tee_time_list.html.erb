@@ -1,0 +1,25 @@
+<table>
+  <thead>
+    <tr>
+      <th>Start</th>
+      <th>End</th>
+      <th>Length</th>
+      <th>Booking</th>
+  		</tr>
+  </thead>
+
+  <tbody>
+    <% @tee_times.each do |tee_time| %>
+      <tr>
+        <td><%= tee_time.start.strftime("%I:%M %p")%></td>
+        <td><%= tee_time.end.strftime("%I:%M %p") %></td>
+        <td><%= tee_time.length %> Minutes</td>
+		<% if !tee_time.hasBooking %>
+        	<td><%= link_to 'Book this Time', new_tee_time_booking_path(tee_time)%></td>
+		<% else %>
+			<td><%= button_to 'Cancel this Time', tee_time.getBooking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		<% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

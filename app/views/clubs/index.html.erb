@@ -1,0 +1,7 @@
+<h1>All clubs</h1>
+
+<%= render partial: "clubs/club_list", locals: {clubs: @clubs}%>
+
+<br>
+
+<%= link_to 'New Club', new_club_path %>

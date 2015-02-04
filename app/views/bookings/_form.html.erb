@@ -1,0 +1,38 @@
+
+<%= form_for(@booking) do |f| %>
+  <% if @booking.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@booking.errors.count, "error") %> prohibited this booking from being saved:</h2>
+
+      <ul>
+      <% @booking.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class='row'>
+	  <div class="large-12 centered">
+		  <div class="field">
+		    <%= f.label :user_id %><br>
+			<%= f.collection_select :user_id, User.order(:name),:id,:name, include_blank: false %>
+		  </div>
+	  </div>
+  </div>
+  <div class='row'>
+	  <div class="large-10 inline ">
+		  	
+		    Start Time <%= f.text_field :start,:value => @booking.formatForDropDown(@booking.start), class: "book_timeslot inline" %> 
+			End Time <%= f.text_field :end, :value => @booking.formatForDropDown(@booking.end),class: "book_timeslot inline" %>
+		  
+	  </div>
+  
+  </div>
+  
+<%= f.hidden_field "tee_time_id", :value => @tee_time_id %>
+  <div class='row'>
+  	<div class="actions">
+    	<%= f.submit %>
+  	</div>
+  </div>
+<% end %>
